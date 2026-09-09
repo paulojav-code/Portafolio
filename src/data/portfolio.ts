@@ -3,6 +3,10 @@
 //  Edita este archivo para personalizar tu info
 // ─────────────────────────────────────────────
 
+// Prefijo base para imágenes en public/ — funciona tanto en dev como en GitHub Pages
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const img = (path: string) => (path ? `${base}${path}` : "");
+
 export const siteData = {
   // ── NAV ──────────────────────────────────────
   name: "Tu Nombre.",
@@ -23,7 +27,7 @@ export const siteData = {
       "Ayudo a las personas a desarollar ideas digitales para sus negocios y asi generar un impacto positivo a la hora de dar a conocer sus marcas",
     ctaLabel: "Mi historia →",
     ctaHref: "#sobre-mi",
-    photo: "/Perfil.jpg",
+    photo: img("/Perfil.jpg"),
     socials: {
       
     },
@@ -40,35 +44,35 @@ export const siteData = {
     {
       title: "Sistema de Almacen",
       tags: "Aplicacion ",
-      cover: "/p1/cover.jpeg",
+      cover: img("/p1/cover.jpeg"),
       images: [
-        "/p1/cover.jpeg",
-        "/p1/2.jpeg",
-        "/p1/3.jpeg",
+        img("/p1/cover.jpeg"),
+        img("/p1/2.jpeg"),
+        img("/p1/3.jpeg"),
       ],
       description: "Proyecto simpre hecho con React y mySQL, para facilitar el manejo de producto la venta del mismo y la creacion de notas de venta y tickets",    // texto opcional que aparece en el modal
     },
     {
       title: "Pagina distribuidor de ceras",
       tags: "Pagina Web",
-      cover: "/p2/cover.png",
+      cover: img("/p2/cover.png"),
       images: [
-        "/p2/cover.png",
-        "/p2/2.png",
-        "/p2/3.png",
-        "/p2/4.png",
+        img("/p2/cover.png"),
+        img("/p2/2.png"),
+        img("/p2/3.png"),
+        img("/p2/4.png"),
       ],
       description: "Pagina hecha con react que funcionaba como tienda de ceraas,carton y otros productos",
     },
     {
       title: "Distribuidor de herramientas detanles",
       tags: "Pagina Web",
-      cover: "/p3/cover.jpeg",
+      cover: img("/p3/cover.jpeg"),
       images: [
-        "/p3/2.jpeg",
-        "/p3/3.jpeg",
-        "/p3/4.jpeg",
-        "/p3/5.jpeg",
+        img("/p3/2.jpeg"),
+        img("/p3/3.jpeg"),
+        img("/p3/4.jpeg"),
+        img("/p3/5.jpeg"),
       ],
       description: "",
     },
