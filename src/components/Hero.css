@@ -1,0 +1,120 @@
+.hero {
+  padding-top: 90px;
+  padding-bottom: 80px;
+}
+
+.hero__grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5.2vw, 58px);
+  margin-bottom: 22px;
+}
+
+.hero__role {
+  font-size: 19px;
+  color: var(--text-dim);
+  max-width: 34ch;
+  margin-bottom: 16px;
+}
+
+.hero__role strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero__desc {
+  color: var(--text-faint);
+  max-width: 44ch;
+  margin-bottom: 26px;
+  font-size: 15px;
+}
+
+.hero__socials {
+  display: flex;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.hero__social-link {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.hero__social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hero__photo {
+  width: 320px;
+  height: 400px;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--card-2), var(--bg-alt));
+  border: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__photo::before {
+  content: "";
+  position: absolute;
+  background: var(--accent);
+  opacity: 0.12;
+  border-radius: 50%;
+  top: -60px;
+  right: -60px;
+}
+
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__photo-hint {
+  position: relative;
+  z-index: 1;
+  color: var(--text-faint);
+  font-size: 13px;
+  text-align: center;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 56px;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero__grid {
+    padding: 0 22px;
+  }
+}
